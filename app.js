@@ -43,7 +43,7 @@ app.set('etag', WEB_CACHE)
 
 const connectDB = async () =>{
     try{
-        await mongoose.connect(MONGODB_CONNECTION,{autoIndex: true});
+        await mongoose.connect(process.env.MONGODB_CONNECTION,{autoIndex: true});
         console.log("MongoDB Connected");
     }catch(e){
         console.error("❌ MongoDB Connection Error:", e.message);
